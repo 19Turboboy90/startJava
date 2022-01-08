@@ -1,33 +1,31 @@
 public class ConditionalStatement {
     public static void main(String[] args) {
         int age = 31;
-        double height = 1.73;
-        boolean ManGender = true;
-        char name = 'I';
-
         if (age > 20) {
             System.out.println("Age is more than average");
         }
 
-        if (ManGender) {
+        boolean manGender = true;
+        if (manGender) {
             System.out.println("Man");
         }
-
-        if (!ManGender) {
+        if (!manGender) {
             System.out.println("Woman");
         }
 
+        double height = 1.73;
         if (height < 1.80) {
             System.out.println("A man of average height");
         } else {
             System.out.println("Tall man");
         }
 
-        if (name == 'M') {
+        char firstLetterOfName = 'I';
+        if (firstLetterOfName == 'M') {
             System.out.println("Name Max");
-        } else if (name == 'I') {
+        } else if (firstLetterOfName == 'I') {
             System.out.println("Name Ilia");
-        } else {
+        } else{
             System.out.println("Other name");
         }
     }
