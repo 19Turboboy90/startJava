@@ -20,7 +20,7 @@ public class Cycle {
             value +=2;
         }
 
-        // do while
+      // do while
         int number = 10;
         int tmp = 0;
         do {
