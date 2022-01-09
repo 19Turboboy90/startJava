@@ -3,19 +3,19 @@ public class Variable {
         byte core = 6;
         short ramMemory = 16;
         int systemBitDepth = 64;
-        long ssd  = 300000L;
+        long ssd = 300000L;
         float processorFrequency = 4.3f;
         double hardDiskMemory = 375782.274;
         char motherboard = 'm';
         boolean cooler = true;
 
-        System.out.println("byte: " + core);
-        System.out.println("short: " + ramMemory);
-        System.out.println("int: " + systemBitDepth);
-        System.out.println("long: " + ssd);
-        System.out.println("float: " + processorFrequency);
-        System.out.println("double: " + hardDiskMemory);
-        System.out.println("char: " + motherboard);
-        System.out.println("boolean: " + cooler);
+        System.out.println("колличество ядер: " + core);
+        System.out.println("оперативная память: " + ramMemory);
+        System.out.println("разрядность системы: " + systemBitDepth);
+        System.out.println("ssd диск: " + ssd);
+        System.out.println("частота процессора: " + processorFrequency);
+        System.out.println("жесткий диск: " + hardDiskMemory);
+        System.out.println("материнская плата: " + motherboard);
+        System.out.println("кулер: " + cooler);
     }
 }
