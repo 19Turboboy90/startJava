@@ -14,13 +14,13 @@ public class Cycle {
 
         // do while
         int number2 = 10;
-        int sumOddNumbers = 0;
+        int sumOdd = 0;
         do {
             if (number2 % 2 == 1) {
-                sumOddNumbers += number2;
+                sumOdd += number2;
             }
             number2++;
         } while(number2 < 20);
-        System.out.println("sum of numbers: " + sumOddNumbers);
+        System.out.println("sum of numbers: " + sumOdd);
     }
 }
