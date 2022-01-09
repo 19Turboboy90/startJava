@@ -5,11 +5,11 @@ public class ConditionalStatement {
             System.out.println("Age is more than average");
         }
 
-        boolean manGender = true;
-        if (manGender) {
+        boolean maleGender = true;
+        if (maleGender) {
             System.out.println("Man");
         }
-        if (!manGender) {
+        if (!maleGender) {
             System.out.println("Woman");
         }
 
