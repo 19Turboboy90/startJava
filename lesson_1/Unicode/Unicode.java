@@ -1,8 +1,8 @@
 public class Unicode {
     public static void main(String[] args) {
-        char firstPosition = 33;
-        char lastPosition = 126;
-        for (char ch = firstPosition; ch <= lastPosition; ch++) {
+        char startRange = 33;
+        char endRange = 126;
+        for (char ch = startRange; ch <= endRange; ch++) {
             System.out.print(ch + " ");
         }
     }
