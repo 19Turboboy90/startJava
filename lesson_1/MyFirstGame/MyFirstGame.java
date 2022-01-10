@@ -5,13 +5,13 @@ public class MyFirstGame {
 
         while(enteredNumber != guessNumber) {
             if (guessNumber < enteredNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
+                System.out.println("Р”Р°РЅРЅРѕРµ С‡РёСЃР»Рѕ Р±РѕР»СЊС€Рµ С‚РѕРіРѕ, С‡С‚Рѕ Р·Р°РіР°РґР°Р» РєРѕРјРїСЊСЋС‚РµСЂ");
                 enteredNumber -= 5;
             } else if (guessNumber > enteredNumber) {
-                System.out.println("Данное число меньше того, что загадал компьютер");
+                System.out.println("Р”Р°РЅРЅРѕРµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ С‚РѕРіРѕ, С‡С‚Рѕ Р·Р°РіР°РґР°Р» РєРѕРјРїСЊСЋС‚РµСЂ");
                 enteredNumber += 4;
             }
         }
-        System.out.println("Поздравляю, число угадано!");
+        System.out.println("РџРѕР·РґСЂР°РІР»СЏСЋ, С‡РёСЃР»Рѕ СѓРіР°РґР°РЅРѕ!");
     }
 }
