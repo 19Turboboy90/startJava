@@ -2,19 +2,16 @@ public class MyFirstGame {
     public static void main(String[] args) {
         int guessNumber = 55;
         int enteredNumber = 30;
-        boolean isWin = false;
 
-        while(!isWin) {
+        while(enteredNumber != guessNumber) {
             if (guessNumber < enteredNumber) {
-                System.out.println("Р”Р°РЅРЅРѕРµ С‡РёСЃР»Рѕ Р±РѕР»СЊС€Рµ С‚РѕРіРѕ, С‡С‚Рѕ Р·Р°РіР°РґР°Р» РєРѕРјРїСЊСЋС‚РµСЂ");
+                System.out.println("Данное число больше того, что загадал компьютер");
                 enteredNumber -= 5;
             } else if (guessNumber > enteredNumber) {
-                System.out.println("Р”Р°РЅРЅРѕРµ С‡РёСЃР»Рѕ РјРµРЅСЊС€Рµ С‚РѕРіРѕ, С‡С‚Рѕ Р·Р°РіР°РґР°Р» РєРѕРјРїСЊСЋС‚РµСЂ");
+                System.out.println("Данное число меньше того, что загадал компьютер");
                 enteredNumber += 4;
-            } else {
-                System.out.println("РџРѕР·РґСЂР°РІР»СЏСЋ, С‡РёСЃР»Рѕ СѓРіР°РґР°РЅРѕ!");
-                isWin = true;
             }
         }
+        System.out.println("Поздравляю, число угадано!");
     }
 }
