@@ -15,7 +15,7 @@ public class Calculator {
         this.operator = operator;
     }
 
-    public void checkingOperator() {
+    public void startCalculations() {
         switch (operator) {
             case '+':
                 System.out.println(number1 + number2);
