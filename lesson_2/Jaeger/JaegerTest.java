@@ -1,8 +1,6 @@
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger romeoBlue = new Jaeger();
-        Jaeger louisBancroft = new Jaeger();
-
         romeoBlue.setModelName("Romeo Blue");
         romeoBlue.setMark("Mark-1");
         romeoBlue.setOrigin("USA");
@@ -12,6 +10,7 @@ public class JaegerTest {
         romeoBlue.setStrength(7);
         romeoBlue.setArmor(6);
 
+        Jaeger louisBancroft = new Jaeger();
         louisBancroft.setModelName("Louis Bancroft");
         louisBancroft.setMark("Mark-1");
         louisBancroft.setOrigin("Canada");
