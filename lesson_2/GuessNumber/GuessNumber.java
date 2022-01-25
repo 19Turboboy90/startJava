@@ -23,7 +23,8 @@ public class GuessNumber {
             } else {
                 System.out.println("Данное число больше того, что загадал компьютер");
             }
-            System.out.print("Тгрок " + player2.getName() + " вводит число: ");
+            
+            System.out.print("Игрок " + player2.getName() + " вводит число: ");
             player2.setNumber(console.nextInt());
             if (guessNumber == player2.getNumber()) {
                 System.out.println("Игрок: " + player1.getName() + " победил!!! Угадав число " + guessNumber);
