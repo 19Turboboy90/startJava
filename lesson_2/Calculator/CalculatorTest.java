@@ -13,7 +13,7 @@ public class CalculatorTest {
                 calculator.setOperator(console.next().charAt(0));
                 System.out.print("Введите второе число: ");
                 calculator.setNumber2(console.nextLong());
-                calculator.startCalculations();
+                calculator.calculate();
             }
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
             checkingResponse = console.next();

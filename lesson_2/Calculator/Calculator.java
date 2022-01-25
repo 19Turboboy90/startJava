@@ -15,7 +15,7 @@ public class Calculator {
         this.operator = operator;
     }
 
-    public void startCalculations() {
+    public void calculate() {
         switch (operator) {
             case '+':
                 System.out.println(number1 + number2);
@@ -33,11 +33,11 @@ public class Calculator {
                 System.out.println(number1 % number2);
                 break;
             case '^':
-                long tmp = number1;
+                long powResult = number1;
                 for (int i = 1; i < number2; i++) {
-                    number1 *= tmp;
+                    powResult *= number1;
                 }
-                System.out.println(number1);
+                System.out.println(powResult);
                 break;
         }
     }
