@@ -1,3 +1,5 @@
+package com.startJava.lesson_2_3.robot;
+
 public class JaegerTest {
     public static void main(String[] args) {
         Jaeger romeoBlue = new Jaeger("Romeo Blue","Mark-1","USA",77.72f,7775,2,7,6);

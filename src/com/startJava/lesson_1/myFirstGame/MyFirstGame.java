@@ -1,3 +1,5 @@
+package com.startJava.lesson_1.myFirstGame;
+
 public class MyFirstGame {
     public static void main(String[] args) {
         int guessNumber = 55;

@@ -1,9 +1,11 @@
+package com.startJava.lesson_2_3.person;
+
 public class Person {
-    String name = "Ilia";
+    String name = "SuperMan";
     char gender = 'm';
-    double weight = 85.3;
-    double height = 1.74;
-    int age = 31;
+    double weight = 99.9;
+    double height = 2.05;
+    int age = 22;
 
     public void go() {
         System.out.println("Идти");
