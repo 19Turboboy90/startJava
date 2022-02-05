@@ -9,7 +9,9 @@ public class CalculatorTest {
         String option = "yes";
         while (!option.equals("no")) {
             if (option.equals("yes")) {
-                System.out.println(calculator.calculate());
+                System.out.print("Введите математическое выражение: ");
+                String mathExpression = console.nextLine();
+                System.out.println(calculator.calculate(mathExpression));
             }
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
             option = console.nextLine();
