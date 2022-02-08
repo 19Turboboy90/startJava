@@ -8,19 +8,16 @@ public class GuessNumberTest {
         String checkingResponse = "yes";
         System.out.println("Игра начинается!!! У каждого игрока по 10 попыток");
         System.out.print("Введите имя первого игрока: ");
-        String name1 = console.nextLine();
-        Player player1 = new Player(name1);
+        Player name1 = new Player(console.nextLine());
         System.out.print("Введите имя второго игрока: ");
-        String name2 = console.nextLine();
-        Player player2 = new Player(name2);
-        GuessNumber game = new GuessNumber(player1, player2);
+        Player name2 = new Player(console.nextLine());
+        GuessNumber game = new GuessNumber(name1, name2);
         while (!checkingResponse.equals("no")) {
             if (checkingResponse.equals("yes")) {
-                game.startGame();
+                game.start();
             }
             System.out.print("Хотите продолжить игру? [yes/no]: ");
-            checkingResponse = console.next();
-            game.resetValues();
+            checkingResponse = console.nextLine();
         }
     }
 }

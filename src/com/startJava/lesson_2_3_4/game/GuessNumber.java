@@ -1,6 +1,5 @@
 package com.startJava.lesson_2_3_4.game;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumber {
@@ -12,24 +11,16 @@ public class GuessNumber {
         this.player2 = player2;
     }
 
-    int countPlayer1;
-    int countPlayer2;
-    int[] newEnteredNumbers1;
-    int[] newEnteredNumbers2;
-
-    public void startGame() {
+    public void start() {
         Scanner console = new Scanner(System.in);
         int guessNumber = (int) (Math.random() * 100 + 1);
-        newEnteredNumbers1 = player1.getEnteredNumbers();
-        newEnteredNumbers2 = player2.getEnteredNumbers();
         while (true) {
-            if (newEnteredNumbers1.length != countPlayer1) {
+            if (player1.getCountPlayer() != 10) {
                 System.out.print("Игрок " + player1.getName() + " вводит число: ");
                 int number1 = (console.nextInt());
-                newEnteredNumbers1[countPlayer1] = number1;
-                countPlayer1++;
+                player1.added(number1);
                 if (guessNumber == number1) {
-                    System.out.println("Игрок: " + player1.getName() + " победил!!! Угадав число " + guessNumber + " с " + countPlayer1 + " попытки");
+                    System.out.println("Игрок: " + player1.getName() + " победил!!! Угадав число " + guessNumber + " с " + player1.getCountPlayer() + " попытки");
                     break;
                 } else if (guessNumber > number1) {
                     System.out.println("Данное число меньше того, что загадал компьютер");
@@ -40,31 +31,34 @@ public class GuessNumber {
                 System.out.println("У " + player1.getName() + " закончились попытки");
             }
 
-            if (newEnteredNumbers2.length != countPlayer2) {
+            if (player2.getCountPlayer() != 10) {
                 System.out.print("Игрок " + player2.getName() + " вводит число: ");
                 int number2 = (console.nextInt());
-                newEnteredNumbers2[countPlayer2] = number2;
-                countPlayer2++;
+                player2.added(number2);
                 if (guessNumber == number2) {
-                    System.out.println("Игрок: " + player2.getName() + " победил!!! Угадав число " + guessNumber + " с " + countPlayer2 + " попытки");
+                    System.out.println("Игрок: " + player2.getName() + " победил!!! Угадав число " + guessNumber + " с " + player2.getCountPlayer() + " попытки");
                     break;
                 } else if (guessNumber > number2) {
                     System.out.println("Данное число меньше того, что загадал компьютер");
                 } else {
                     System.out.println("Данное число больше того, что загадал компьютер");
                 }
-            } else System.out.println("У " + player2.getName() + " закончились попытки");
+            } else {
+                System.out.println("У " + player2.getName() + " закончились попытки");
+                break;
+            }
         }
-        int[] newArray1 = Arrays.copyOf(newEnteredNumbers1, countPlayer1);
-        int[] newArray2 = Arrays.copyOf(newEnteredNumbers2, countPlayer2);
-        System.out.println("Введенные числа игрока " + player1.getName() + Arrays.toString(newArray1));
-        System.out.println("Введенные числа игрока " + player2.getName() + Arrays.toString(newArray2));
+        sorted(player1.getEnteredNumbers(), player1);
+        sorted(player2.getEnteredNumbers(), player2);
+        player1.resetValues();
+        player2.resetValues();
     }
 
-    public void resetValues() {
-        Arrays.fill(newEnteredNumbers1, 0, countPlayer1, 0);
-        Arrays.fill(newEnteredNumbers2, 0, countPlayer2, 0);
-        countPlayer1 = 0;
-        countPlayer2 = 0;
+    private void sorted(int[] array, Player player) {
+        System.out.print("Введенные числа игрока " + player.getName() + ":");
+        for (int number : array) {
+            System.out.print(" " + number);
+        }
+        System.out.println();
     }
 }
