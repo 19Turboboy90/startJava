@@ -2,10 +2,10 @@ package com.startJava.lesson_2_3_4.calculator;
 
 public class Calculator {
     public int calculate(String mathExpression) {
-        String[] arrayMath = mathExpression.split(" ");
-        int number1 = Integer.parseInt(arrayMath[0]);
-        char operator = arrayMath[1].charAt(0);
-        int number2 = Integer.parseInt(arrayMath[2]);
+        String[] partsExpression = mathExpression.split(" ");
+        int number1 = Integer.parseInt(partsExpression[0]);
+        char operator = partsExpression[1].charAt(0);
+        int number2 = Integer.parseInt(partsExpression[2]);
         switch (operator) {
             case '+':
                 return Math.addExact(number1, number2);
@@ -22,6 +22,6 @@ public class Calculator {
             default:
                 System.out.println("Введен неверный математический оператор");
         }
-        return -1;
+        return 0;
     }
 }
