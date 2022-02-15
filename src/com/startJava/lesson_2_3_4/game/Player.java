@@ -32,4 +32,19 @@ public class Player {
         Arrays.fill(enteredNumbers, 0, countAttempts, 0);
         countAttempts = 0;
     }
+
+    public int lastEnterNumber() {
+        int lastEnterNumber = 0;
+        int enteredNumber = 0;
+        for (int i = lastEnterNumber; i < enteredNumbers.length; i++) {
+            lastEnterNumber++;
+            if (lastEnterNumber == countAttempts) {
+                enteredNumber = enteredNumbers[i];
+                break;
+            }
+        }
+
+        return enteredNumber;
+
+    }
 }

@@ -5,24 +5,22 @@ import java.util.Scanner;
 public class GuessNumber {
     private Player player1;
     private Player player2;
+    Scanner console = new Scanner(System.in);
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
 
-    Scanner console = new Scanner(System.in);
-
     public void start() {
         int guessNumber = (int) (Math.random() * 100 + 1);
         while (true) {
-            int number1 = enterNumber(player1);
-            if (compareNumbers(guessNumber, number1)) {
+            enterNumber(player1);
+            if (compareNumbers(guessNumber, player1)) {
                 break;
             }
-
-            int number2 = enterNumber(player2);
-            if (compareNumbers(guessNumber, number2)) {
+            enterNumber(player2);
+            if (compareNumbers(guessNumber, player2)) {
                 break;
             }
             if (player2.getEnteredNumbers().length == 10) {
@@ -46,11 +44,11 @@ public class GuessNumber {
         System.out.println();
     }
 
-    private boolean compareNumbers(int guessNumber, int number) {
-        if (guessNumber == number) {
-            System.out.println("Игрок: " + player1.getName() + " победил!!! Угадав число " + guessNumber + " с " + player1.getCountAttempts() + " попытки");
+    private boolean compareNumbers(int guessNumber, Player player) {
+        if (guessNumber == player.lastEnterNumber()) {
+            System.out.println("Игрок: " + player.getName() + " победил!!! Угадав число " + guessNumber + " с " + player.getCountAttempts() + " попытки");
             return true;
-        } else if (guessNumber > number) {
+        } else if (guessNumber > player.lastEnterNumber()) {
             System.out.println("Данное число меньше того, что загадал компьютер");
         } else {
             System.out.println("Данное число больше того, что загадал компьютер");
@@ -58,10 +56,9 @@ public class GuessNumber {
         return false;
     }
 
-    private int enterNumber(Player player) {
+    private void enterNumber(Player player) {
         System.out.print("Игрок " + player.getName() + " вводит число: ");
         int number = console.nextInt();
         player.addNumber(number);
-        return number;
     }
 }
