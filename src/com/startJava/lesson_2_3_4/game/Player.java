@@ -34,17 +34,6 @@ public class Player {
     }
 
     public int lastEnterNumber() {
-        int lastEnterNumber = 0;
-        int enteredNumber = 0;
-        for (int i = lastEnterNumber; i < enteredNumbers.length; i++) {
-            lastEnterNumber++;
-            if (lastEnterNumber == countAttempts) {
-                enteredNumber = enteredNumbers[i];
-                break;
-            }
-        }
-
-        return enteredNumber;
-
+        return enteredNumbers[countAttempts - 1];
     }
 }

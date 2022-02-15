@@ -50,15 +50,12 @@ public class GuessNumber {
             return true;
         } else if (guessNumber > player.lastEnterNumber()) {
             System.out.println("Данное число меньше того, что загадал компьютер");
-        } else {
-            System.out.println("Данное число больше того, что загадал компьютер");
-        }
+        } else System.out.println("Данное число больше того, что загадал компьютер");
         return false;
     }
 
     private void enterNumber(Player player) {
         System.out.print("Игрок " + player.getName() + " вводит число: ");
-        int number = console.nextInt();
-        player.addNumber(number);
+        player.addNumber(console.nextInt());
     }
 }
