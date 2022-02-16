@@ -35,13 +35,9 @@ public class GuessNumber {
         player2.resetNumbers();
     }
 
-    private void displayAttempts(Player player) {
-        int[] numbers = player.getEnteredNumbers();
-        System.out.print("Введенные числа игрока " + player.getName() + ":");
-        for (int number : numbers) {
-            System.out.print(" " + number);
-        }
-        System.out.println();
+    private void enterNumber(Player player) {
+        System.out.print("Игрок " + player.getName() + " вводит число: ");
+        player.addNumber(console.nextInt());
     }
 
     private boolean compareNumbers(int guessNumber, Player player) {
@@ -54,8 +50,12 @@ public class GuessNumber {
         return false;
     }
 
-    private void enterNumber(Player player) {
-        System.out.print("Игрок " + player.getName() + " вводит число: ");
-        player.addNumber(console.nextInt());
+    private void displayAttempts(Player player) {
+        int[] numbers = player.getEnteredNumbers();
+        System.out.print("Введенные числа игрока " + player.getName() + ":");
+        for (int number : numbers) {
+            System.out.print(" " + number);
+        }
+        System.out.println();
     }
 }
