@@ -4,22 +4,23 @@ public class Bookshelf {
     private int size;
     private final Book[] books = new Book[10];
 
-    void addBook(Book book) {
+    public void addBook(Book book) {
         books[size] = book;
         size++;
     }
 
-    void removeBook(String nameBook) {
+    public boolean removeBook(String nameBook) {
         for (int i = 0; i < size; i++) {
             if (books[i].getTitle().equals(nameBook)) {
-                System.arraycopy(books, i + 1, books, i, size);
+                System.arraycopy(books, i + 1, books, i, size - i);
                 size--;
-                break;
+                return true;
             }
         }
+        return false;
     }
 
-    Book getBook(String nameBook) {
+    public Book getBook(String nameBook) {
         for (int i = 0; i < size; i++) {
             if (books[i].getTitle().equals(nameBook)) {
                 return books[i];
@@ -28,15 +29,15 @@ public class Bookshelf {
         return null;
     }
 
-    int quantityBooks() {
+    public int getCountBooks() {
         return size;
     }
 
-    int quantityFree() {
+    public int getCountFreeCells() {
         return books.length - size;
     }
 
-    public void shelf() {
+    public void drawShelf() {
         for (Book book : books) {
             if (book == null) {
                 System.out.println("<!--  --!>");
